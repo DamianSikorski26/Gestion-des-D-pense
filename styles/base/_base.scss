@@ -17,12 +17,14 @@ form{
     padding: 15px;
     border-radius: 15px;
     margin-bottom: 20px;
-
 }
 #addButton{
-    background-color: red;
+    background-color: rgb(252, 96, 96);
     border: none;
     padding: 20px;
+    &:hover{
+        
+    }
 }
 
 ul{

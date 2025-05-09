@@ -20,6 +20,7 @@ function htmlContent(el1,el2,el3,ind){
 function displayListe(){
     if (tabListe.length == 0){
         liste.innerHTML = "Aucun enregistrement";
+        total.textContent = TotalCalc();
         return
     }
     // reinitialisation de l'affichage
@@ -36,9 +37,11 @@ function displayListe(){
 
 function TotalCalc(){
     let sum = 0;
-    tabListe.forEach((element) =>{
+    if (tabListe.length !== 0)
+        {tabListe.forEach((element) =>{
         sum += Number(element[1]);
-    })
+        })
+    }
     return sum;
 }
 
@@ -53,9 +56,7 @@ liste.addEventListener("click",(event)=>{
     }
     else {return}
     displayListe()
-    
-    
-    
+
 })
 
 // addButton
@@ -65,6 +66,9 @@ addButton.addEventListener("click",(event) =>{
     tabListe.push([nomDepense.value,montantDepense.value,categorie.value])
     displayListe()
     console.log(TotalCalc());
+    nomDepense.value = "";
+    montantDepense.value = "";
+    categorie.value ="";
     
 })
 
