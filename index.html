@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.min.css">
+    <script defect src="./script/main.js"></script>
+</head>
+<body>
+    <H1>Gestion des dépenses</H1>
+    <form action="form">
+        <label for="nomDepense">Nom de la dépense</label>
+        <input type="text" id="nomDepense">
+        <label for="montantDepense">Montant</label>
+        <input type="number" id="montantDepense">
+        <label for="categorie">Catégorie</label>
+        <select name="categorie" id="categorie">
+            <option value="null">Choisir une categorie</option>
+            <option value="transport">Transport</option>
+            <option value="logement">Logement</option>
+            <option value="divertissement">Divertissement</option>
+        </select>
+        <input type="submit" value="Ajouter" id="addButton">
+    </form>
+
+    <ul id="liste">
+
+    </ul>
+    <p id="total"></p>
+    
+</body>
+</html>
