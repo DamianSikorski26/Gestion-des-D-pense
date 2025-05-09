@@ -17,14 +17,19 @@ form{
     padding: 20px;
     border-radius: 15px;
     margin-bottom: 20px;
+    box-shadow: 5px 5px 14px 1px lightgray;
 }
 #addButton{
-    background-color: rgb(252, 96, 96);
-    border: none;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 0, 0);
     padding: 20px;
+    transition: .3s all linear;
+    color: rgb(255, 0, 0);
     &:hover{
-
+        background-color: rgb(255, 0, 0);
+        color: white;
     }
+    cursor: pointer;
 }
 
 ul{
@@ -36,13 +41,17 @@ ul{
     text-align: center;
     padding: 15px;
     border-radius: 15px;
+    box-shadow: 5px 5px 14px 1px lightgray;
 
 }
 li{
     list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
 
-div{
+#totalContainer{
     text-align: center;
     margin-top: 20px;
 
@@ -51,4 +60,7 @@ select , input{
     padding: 10px;
     background-color: rgb(235, 235, 235);
     border: none;
+}
+span{
+    cursor: pointer;
 }

@@ -13,28 +13,35 @@ const tabListe = [];
 // fonction qui return le contenu html
 
 function htmlContent(el1,el2,el3,el4,ind){
-    return `<li style="color:${colorPicker(el3)}">${el1} - ${el2}€ - ${el3} date:${el4}<span class="delButton" id=${ind}>❌</span></li>`
+    return `<li style="color:${colorPicker(el3)[0]}"><p>${colorPicker(el3)[1]} ${el1} | ${el2}€ - ${el3}   ${el4}</p><span class="delButton" id=${ind}>❌</span></li><hr>`
 
 }
 
 // fonction qui choisit la couleur en fonction de la catégorie
 function colorPicker(cat){
     let color;
+    let emoji;
     switch (cat){
         case "transport":
             color = "blue";
+            emoji = "🚗";
             break
         case "logement":
             color = "green";
+            emoji = "🏠";
             break
         case "divertissement":
             color = "pink";
+            emoji = "🥳";
             break
         default :
             color = "black";
+            emoji = "😐";
     }
-    return color;
+    return [color,emoji]
 }
+
+
 
 // fonction permettant l'affichage du contenu du tableau
 function displayListe(){
@@ -83,6 +90,14 @@ liste.addEventListener("click",(event)=>{
 
 addButton.addEventListener("click",(event) =>{
     event.preventDefault();
+    // pas de dépense
+    if (!nomDepense.value){
+        nomDepense.placeholder = "Veuillez indiquer une dépense !";
+        return
+    }
+    else{
+        nomDepense.placeholder = "";
+    }
     // controle du montant
     if(montantDepense.value <= 0 || !montantDepense.value){
         montantDepense.value = "";
@@ -92,8 +107,6 @@ addButton.addEventListener("click",(event) =>{
     else{
         montantDepense.placeholder = "";
     }
-    
-
     tabListe.push([nomDepense.value,montantDepense.value,categorie.value,date.value])
     displayListe()
     console.log(TotalCalc());
