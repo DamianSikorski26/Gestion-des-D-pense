@@ -52,18 +52,6 @@ function colorPicker(cat){
 
 // fonction permettant l'affichage du contenu du tableau
 function displayListe(){
-    if (tabListe.length == 0){
-        liste.innerHTML = "Aucun enregistrement";
-        listeLogement.innerHTML = "Aucun enregistrement";
-        listeDiver.innerHTML = "Aucun enregistrement";
-        listeTransport.innerHTML = "Aucun enregistrement";
-        
-        total.textContent = 0;
-        totalDiver.textContent = 0;
-        totalLogement.textContent = 0;
-        totalTransport.textContent = 0;
-        return
-    }
     // reinitialisation de l'affichage
     liste.innerHTML = "";
     listeLogement.innerHTML = "";
@@ -105,7 +93,19 @@ function displayListe(){
                 total.textContent = sum; 
         }
         
-    }) 
+    })
+    if (sumTransport == 0){
+        listeTransport.textContent = "Aucun enregistrement";
+    }
+    if (sumLogement == 0){
+        listeLogement.textContent = "Aucun enregistrement";
+    }
+    if (sumDivers == 0){
+        listeDiver.textContent = "Aucun enregistrement";
+    }
+    if (sum == 0){
+        liste.textContent = "Aucun enregistrement";
+    }
 }
 
 //bouton del

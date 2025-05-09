@@ -68,8 +68,12 @@ span{
 
 #wrapper{
     display: grid;
+    width: 100%;
     grid-template-columns:repeat(4,auto);
     gap: 10px;
-    
+    max-width: 1300px;
     margin: auto;
+}
+.basicContainer{
+    max-width: 100%;
 }
