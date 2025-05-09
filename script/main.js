@@ -83,6 +83,17 @@ liste.addEventListener("click",(event)=>{
 
 addButton.addEventListener("click",(event) =>{
     event.preventDefault();
+    // controle du montant
+    if(montantDepense.value <= 0 || !montantDepense.value){
+        montantDepense.value = "";
+        montantDepense.placeholder = "Montant manquant ou plus petit que zéro !";
+        return
+    }
+    else{
+        montantDepense.placeholder = "";
+    }
+    
+
     tabListe.push([nomDepense.value,montantDepense.value,categorie.value,date.value])
     displayListe()
     console.log(TotalCalc());
