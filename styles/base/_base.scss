@@ -14,7 +14,7 @@ form{
     display: grid;
     grid-template-columns: 1;
     gap: 20px;
-    padding: 15px;
+    padding: 20px;
     border-radius: 15px;
     margin-bottom: 20px;
 }
@@ -23,7 +23,7 @@ form{
     border: none;
     padding: 20px;
     &:hover{
-        
+
     }
 }
 
@@ -41,8 +41,14 @@ ul{
 li{
     list-style-type: none;
 }
+
 div{
     text-align: center;
     margin-top: 20px;
 
+}
+select , input{
+    padding: 10px;
+    background-color: rgb(235, 235, 235);
+    border: none;
 }

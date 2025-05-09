@@ -13,14 +13,16 @@
         <label for="nomDepense">Nom de la dépense</label>
         <input type="text" id="nomDepense">
         <label for="montantDepense">Montant</label>
-        <input type="number" id="montantDepense">
+        <input type="number" min="0" id="montantDepense">
         <label for="categorie">Catégorie</label>
         <select name="categorie" id="categorie">
-            <option value="null">Choisir une categorie</option>
+            <option value="Sans Catégorie" selected>Choisir une categorie</option>
             <option value="transport">Transport</option>
             <option value="logement">Logement</option>
             <option value="divertissement">Divertissement</option>
         </select>
+        <label for="date">Date</label>
+        <input type="date" id="date">
         <input type="submit" value="Ajouter" id="addButton">
     </form>
 
