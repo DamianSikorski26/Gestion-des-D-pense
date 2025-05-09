@@ -6,10 +6,17 @@ const categorie = document.getElementById("categorie");
 const addButton = document.getElementById("addButton");
 const liste = document.getElementById("liste");
 const total = document.getElementById("total");
+const totalTransport = document.getElementById("totalTransport");
+const totalLogement = document.getElementById("totalLogement");
+const totalDiver = document.getElementById("totalDiver");
 const date = document.getElementById("date");
 
-const tabListe = [];
+const listeTransport =document.getElementById("listeTransport");
+const listeLogement =document.getElementById("listeLogement");
+const listeDiver =document.getElementById("listeDiver");
 
+const tabListe = [];
+const wrapper = document.getElementById("wrapper");
 // fonction qui return le contenu html
 
 function htmlContent(el1,el2,el3,el4,ind){
@@ -47,34 +54,63 @@ function colorPicker(cat){
 function displayListe(){
     if (tabListe.length == 0){
         liste.innerHTML = "Aucun enregistrement";
-        total.textContent = TotalCalc();
+        listeLogement.innerHTML = "Aucun enregistrement";
+        listeDiver.innerHTML = "Aucun enregistrement";
+        listeTransport.innerHTML = "Aucun enregistrement";
+        
+        total.textContent = 0;
+        totalDiver.textContent = 0;
+        totalLogement.textContent = 0;
+        totalTransport.textContent = 0;
         return
     }
     // reinitialisation de l'affichage
     liste.innerHTML = "";
+    listeLogement.innerHTML = "";
+    listeDiver.innerHTML = "";
+    listeTransport.innerHTML = "";
+
+    total.textContent = 0;
+    totalDiver.textContent = 0;
+    totalLogement.textContent = 0;
+    totalTransport.textContent = 0;
+
+    let sumTransport = 0;
+    let sumLogement = 0;
+    let sumDivers = 0;
+    let sum = 0;
     // ajout de chaque Elementdu tableau à la liste
     tabListe.forEach((e,index) =>{
-        liste.innerHTML += htmlContent(e[0],e[1],e[2],e[3],index);
-    })
 
-    total.textContent = TotalCalc();
-}
+        switch (e[2]){
 
-//fonction qui calcule le total
-
-function TotalCalc(){
-    let sum = 0;
-    if (tabListe.length !== 0)
-        {tabListe.forEach((element) =>{
-        sum += Number(element[1]);
-        })
-    }
-    return sum;
+            case "transport":
+                listeTransport.innerHTML += htmlContent(e[0],e[1],e[2],e[3],index);
+                sumTransport += Number(e[1]);
+                totalTransport.textContent = sumTransport; 
+                break
+            case "logement":
+                listeLogement.innerHTML += htmlContent(e[0],e[1],e[2],e[3],index);
+                sumLogement += Number(e[1]);
+                totalLogement.textContent = sumLogement; 
+                break
+            case "divertissement":
+                listeDiver.innerHTML += htmlContent(e[0],e[1],e[2],e[3],index);
+                sumDivers += Number(e[1]);
+                totalDiver.textContent = sumDivers; 
+                break
+            default :
+                liste.innerHTML += htmlContent(e[0],e[1],e[2],e[3],index);
+                sum += Number(e[1]);
+                total.textContent = sum; 
+        }
+        
+    }) 
 }
 
 //bouton del
 
-liste.addEventListener("click",(event)=>{
+wrapper.addEventListener("click",(event)=>{
     event.preventDefault();
     
     if (event.target.classList.contains("delButton")){
@@ -117,8 +153,14 @@ addButton.addEventListener("click",(event) =>{
 })
 
 // initialisation du total et de la liste
-liste.innerHTML = "Aucun enregistrement"; 
+liste.innerHTML = "Aucun enregistrement";
+listeLogement.innerHTML = "Aucun enregistrement";
+listeDiver.innerHTML = "Aucun enregistrement";
+listeTransport.innerHTML = "Aucun enregistrement";
 total.textContent = 0;
+totalLogement.textContent = 0;
+totalDiver.textContent = 0;
+totalTransport.textContent = 0;
 
 
 

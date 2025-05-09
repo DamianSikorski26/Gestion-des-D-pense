@@ -16,7 +16,7 @@
         <input type="number" min="0" id="montantDepense">
         <label for="categorie">Catégorie</label>
         <select name="categorie" id="categorie">
-            <option value="Sans Catégorie" selected disabled>Choisir une categorie</option>
+            <option value="Sans Catégorie" selected>Choisir une categorie</option>
             <option value="transport">Transport</option>
             <option value="logement">Logement</option>
             <option value="divertissement">Divertissement</option>
@@ -26,14 +26,46 @@
         <input type="submit" value="Ajouter" id="addButton">
     </form>
 
-    <ul id="liste">
-
-    </ul>
-    <DIV id="totalContainer">
-        Total:
-        <span id="total"></span>
-        €
-    </DIV>
+    <div id="wrapper">
+        <div class="basicContainer">
+            
+            <ul id="liste">
+                
+            </ul>
+            <DIV id="totalContainer">
+                Total:
+                <span id="total"></span>
+                €
+            </DIV>
+        </div>
+        <div class="basicContainer">
+            <ul id="listeTransport">
+            </ul>
+            <DIV id="totalContainer">
+                Total:
+                <span id="totalTransport"></span>
+                €
+            </DIV>
+        </div>
+        <div class="basicContainer">
+            <ul id="listeLogement">
+            </ul>
+            <DIV id="totalContainer">
+                Total:
+                <span id="totalLogement"></span>
+                €
+            </DIV>
+        </div>
+        <div class="basicContainer">
+            <ul id="listeDiver">
+            </ul>
+            <DIV id="totalContainer">
+                Total:
+                <span id="totalDiver"></span>
+                €
+            </DIV>
+        </div>
+    </div>
     
 </body>
 </html>
