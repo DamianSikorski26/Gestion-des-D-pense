@@ -1,1 +1,46 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form{
+    width: 600px;
+    border: 1px solid lightgray;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1;
+    gap: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+
+}
+#addButton{
+    background-color: red;
+    border: none;
+    padding: 20px;
+}
+
+ul{
+    width: 600px;
+    border: 1px solid lightgray;
+    margin: auto;
+    display: grid;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    border-radius: 15px;
+
+}
+li{
+    list-style-type: none;
+}
+div{
+    text-align: center;
+    margin-top: 20px;
+
+}
